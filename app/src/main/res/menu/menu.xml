@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/item_topic"
+        android:enabled="true"
+        android:icon="@drawable/ic_book"
+        android:title="Topic"
+        />
+    <item
+        android:id="@+id/item_test"
+        android:enabled="true"
+        android:icon="@drawable/ic_test"
+        android:title="Test"
+        />
+    <item
+        android:id="@+id/item_profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_account_box"
+        android:title="Profile"
+        />
+
+</menu>

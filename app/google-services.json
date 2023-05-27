@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1099063691368",
+    "firebase_url": "https://my-psychology-c8f17-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "my-psychology-c8f17",
+    "storage_bucket": "my-psychology-c8f17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1099063691368:android:82030b4f65cc03a79f13dd",
+        "android_client_info": {
+          "package_name": "com.course.mypsychologytestapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1099063691368-lrdla0kqnbsc8g8ib0qqii97bua921q6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.course.mypsychologytestapp",
+            "certificate_hash": "3593186b37bedbb52ac8b52642a8ed03300aed0f"
+          }
+        },
+        {
+          "client_id": "1099063691368-hd7ud2n6t95h11c89ikrnmr2hldrahnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1rploICCR8sn8UgIebhZobt7P5eyJzH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1099063691368-hd7ud2n6t95h11c89ikrnmr2hldrahnv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:gravity="center"
+            android:text="Question"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.Material3.CircularProgressIndicator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="6"
+                android:progress="0"
+                android:minHeight="50dp"
+                android:indeterminate="false" />
+            
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/progressTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textColor="@color/blue"
+                android:text="1/6"
+                android:textSize="15sp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/optionOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="Option 1"
+            android:padding="15dp"
+            android:background="@drawable/option_background"
+            android:textSize="17sp"
+            android:textColor="@color/blue"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/optionTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="Option 2"
+            android:padding="15dp"
+            android:background="@drawable/option_background"
+            android:textSize="17sp"
+            android:textColor="@color/blue"
+            android:textStyle="bold" />
+
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/optionThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="Option 3"
+            android:textSize="17sp"
+            android:padding="15dp"
+
+            android:background="@drawable/option_background"
+            android:textColor="@color/blue"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/optionFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="Option 4"
+            android:textSize="17sp"
+            android:padding="15dp"
+            android:textColor="@color/blue"
+            android:background="@drawable/option_background"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitQuestionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="SUBMIT"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:backgroundTint="@color/blue" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
