@@ -12,8 +12,13 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentTestProcessBinding
+import com.course.mypsychologytestapp.repository.*
 import com.course.mypsychologytestapp.ui.fragments.test.questions.Question
 import com.course.mypsychologytestapp.ui.fragments.test.questions.test1_constants.ConstantsTestTwo
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class TestTwoProcessFragment : Fragment(), View.OnClickListener {
 
@@ -22,6 +27,7 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
     private var selectedAnswer: Int = 0
     private var currentPosition: Int = 1
     private var balls: Int = 0
+    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -93,6 +99,7 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
                     getBalls(selectedAnswer)
                     currentPosition++
                     if (currentPosition == questionListTest1.size) {
+                        updateResultTestTwo()
                         val transaction = activity?.supportFragmentManager?.beginTransaction()
                         transaction?.replace(R.id.containerTest, TestResultFragment())
                         transaction?.disallowAddToBackStack()
@@ -130,33 +137,31 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
 
     private fun getBalls(selectedAnswer: Int) {
         when(selectedAnswer) {
-            1 -> balls
-            2 -> balls
-            3 -> balls
-            4 -> balls
+            1 -> balls++
+            2 -> balls += 2
+            3 -> balls += 3
+            4 -> balls += 4
         }
     }
 
-    /*private fun updateResultTestOne() {
+    private fun updateResultTestTwo() {
         updateDatabaseAchievement(balls)
     }
 
     private fun updateDatabaseAchievement(resultBalls: Int) {
-        val achievement = Achievement(
+        val resultSecondTest = ResultSecondTest(
             uid = FirebaseAuth.getInstance().currentUser!!.uid,
-            resultFirstTest = resultTemperament(resultBalls)
+            result = resultPersonality(resultBalls)
         )
-        AchievementRepository().createAchievement(achievement)
+        ResultSecondTestRepository().createResultSecondTest(resultSecondTest)
     }
 
-    private fun resultTemperament(resultBalls: Int): String {
+    private fun resultPersonality(resultBalls: Int): String {
         when (resultBalls) {
-            in 6..10 -> return "Phlegmatic person"
-            in 11..15 -> return "Choleric person"
-            in 16..20 -> return "Sanguine person"
-            in 21..24 -> return "Melancholic person"
+            in 6..12 -> return "Introvert"
+            in 12..24 -> return "Extrovert"
             else -> return ""
         }
-    }*/
+    }
 
 }
