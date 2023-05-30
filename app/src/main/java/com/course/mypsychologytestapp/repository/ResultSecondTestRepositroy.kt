@@ -1,5 +1,6 @@
 package com.course.mypsychologytestapp.repository
 
+import com.course.mypsychologytestapp.model.ResultSecondTest
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 

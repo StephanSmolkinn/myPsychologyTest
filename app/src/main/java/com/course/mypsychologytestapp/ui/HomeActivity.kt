@@ -10,7 +10,7 @@ import com.course.mypsychologytestapp.ui.fragments.home.HomeFragment
 import com.course.mypsychologytestapp.ui.fragments.profile.ProfileFragment
 import com.course.mypsychologytestapp.ui.fragments.test.TestFragment
 import com.course.mypsychologytestapp.ui.fragments.topic.TopicFragment
-import com.coursework.mypsychology.utils.replaceFragment
+import com.course.mypsychologytestapp.utils.replaceFragment
 
 class HomeActivity : AppCompatActivity() {
 

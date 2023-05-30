@@ -1,4 +1,4 @@
-package com.course.mypsychologytestapp.repository
+package com.course.mypsychologytestapp.model
 
 data class ResultFistTest (
     val uid: String = "",

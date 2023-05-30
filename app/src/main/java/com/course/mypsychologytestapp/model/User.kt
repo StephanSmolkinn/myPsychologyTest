@@ -1,4 +1,4 @@
-package com.course.mypsychologytestapp.repository
+package com.course.mypsychologytestapp.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

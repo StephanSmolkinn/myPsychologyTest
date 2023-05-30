@@ -12,16 +12,11 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentTestProcessBinding
+import com.course.mypsychologytestapp.model.ResultFistTest
 import com.course.mypsychologytestapp.repository.*
 import com.course.mypsychologytestapp.ui.fragments.test.questions.Question
-import com.course.mypsychologytestapp.ui.fragments.test.questions.test1_constants.ConstantsTestOne
+import com.course.mypsychologytestapp.ui.fragments.test.questions.constants.ConstantsTestOne
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.values
-import com.google.firebase.ktx.Firebase
 
 class TestOneProcessFragment : Fragment(), View.OnClickListener {
 
@@ -30,7 +25,6 @@ class TestOneProcessFragment : Fragment(), View.OnClickListener {
     private var selectedAnswer: Int = 0
     private var currentPosition: Int = 1
     private var balls: Int = 0
-    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -103,7 +97,7 @@ class TestOneProcessFragment : Fragment(), View.OnClickListener {
                     if (currentPosition == questionListTest1.size) {
                         updateResultTestOne()
                         val transaction = activity?.supportFragmentManager?.beginTransaction()
-                        transaction?.replace(R.id.containerTest, TestResultFragment())
+                        transaction?.replace(R.id.containerTest, TestFirstResultFragment())
                         transaction?.disallowAddToBackStack()
                         transaction?.commit()
                     } else {
@@ -159,12 +153,12 @@ class TestOneProcessFragment : Fragment(), View.OnClickListener {
     }
 
     private fun resultTemperament(resultBalls: Int): String {
-        when (resultBalls) {
-            in 6..10 -> return "Phlegmatic person"
-            in 11..15 -> return "Choleric person"
-            in 16..20 -> return "Sanguine person"
-            in 21..24 -> return "Melancholic person"
-            else -> return ""
+        return when (resultBalls) {
+            in 8..15 -> "Phlegmatic"
+            in 16..23 -> "Choleric"
+            in 24..29 -> "Sanguine"
+            in 30..32 -> "Melancholic"
+            else -> ""
         }
     }
 

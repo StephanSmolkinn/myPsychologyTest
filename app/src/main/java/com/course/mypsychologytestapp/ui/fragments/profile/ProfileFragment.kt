@@ -12,7 +12,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentProfileBinding
-import com.course.mypsychologytestapp.repository.User
+import com.course.mypsychologytestapp.model.User
 import com.course.mypsychologytestapp.repository.UserRepository
 import com.course.mypsychologytestapp.ui.MainActivity
 import com.google.firebase.auth.FirebaseAuth

@@ -19,10 +19,10 @@
 
         <ImageView
             android:id="@+id/imageView"
-            app:layout_constraintCircleRadius="30dp"
-            android:layout_width="158dp"
-            android:layout_height="101dp"
+            android:layout_width="123dp"
+            android:layout_height="99dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintCircleRadius="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/_841125" />
@@ -32,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="Know yourself"
+            android:layout_marginBottom="8dp"
+            android:text="Learn psychology"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -44,7 +45,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start test"
+            android:text="Read topics"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -56,7 +57,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayoutTest1"
+        android:id="@+id/linearLayoutTopic1"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_margin="32dp"
@@ -65,30 +66,30 @@
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/personalityTestTextView">
+        app:layout_constraintTop_toBottomOf="@+id/personalityTopicTextView">
 
         <ImageView
-            android:id="@+id/imageTest1"
+            android:id="@+id/imageTopic1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:srcCompat="@drawable/image_test_topic" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/startTest1Button"
+            android:id="@+id/startTopic1Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/blue"
             android:gravity="center"
-            android:text="Start"
+            android:text="Read"
             android:textColor="@color/white"
             android:textStyle="bold" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/temperamentTestTextView"
+        android:id="@+id/temperamentTopicTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -100,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/topicInfo" />
 
     <LinearLayout
-        android:id="@+id/linearLayoutTest2"
+        android:id="@+id/linearLayoutTopic2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_margin="32dp"
@@ -109,30 +110,30 @@
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temperamentTestTextView">
+        app:layout_constraintTop_toBottomOf="@+id/temperamentTopicTextView">
 
         <ImageView
-            android:id="@+id/imageTest2"
+            android:id="@+id/imageTopic2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:srcCompat="@drawable/image_test_topic" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/startTest2Button"
+            android:id="@+id/startTopic2Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/blue"
             android:gravity="center"
-            android:text="Start"
+            android:text="Read"
             android:textColor="@color/white"
             android:textStyle="bold" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/personalityTestTextView"
+        android:id="@+id/personalityTopicTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

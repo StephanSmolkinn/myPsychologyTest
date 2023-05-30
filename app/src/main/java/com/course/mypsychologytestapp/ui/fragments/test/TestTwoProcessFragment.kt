@@ -12,13 +12,11 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentTestProcessBinding
+import com.course.mypsychologytestapp.model.ResultSecondTest
 import com.course.mypsychologytestapp.repository.*
 import com.course.mypsychologytestapp.ui.fragments.test.questions.Question
-import com.course.mypsychologytestapp.ui.fragments.test.questions.test1_constants.ConstantsTestTwo
+import com.course.mypsychologytestapp.ui.fragments.test.questions.constants.ConstantsTestTwo
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 
 class TestTwoProcessFragment : Fragment(), View.OnClickListener {
 
@@ -27,7 +25,6 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
     private var selectedAnswer: Int = 0
     private var currentPosition: Int = 1
     private var balls: Int = 0
-    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,7 +57,7 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
         binding.optionThree.text = question.optionThree
         binding.optionFour.text = question.optionFour
 
-        binding.progressBar.max = 8
+        binding.progressBar.max = 5
         binding.progressBar.progress = currentPosition
         binding.progressTextView.text = "$currentPosition/${binding.progressBar.max}"
         textViewAppearance()
@@ -101,7 +98,7 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
                     if (currentPosition == questionListTest1.size) {
                         updateResultTestTwo()
                         val transaction = activity?.supportFragmentManager?.beginTransaction()
-                        transaction?.replace(R.id.containerTest, TestResultFragment())
+                        transaction?.replace(R.id.containerTest, TestSecondResultFragment())
                         transaction?.disallowAddToBackStack()
                         transaction?.commit()
                     }
@@ -157,10 +154,11 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
     }
 
     private fun resultPersonality(resultBalls: Int): String {
-        when (resultBalls) {
-            in 6..12 -> return "Introvert"
-            in 12..24 -> return "Extrovert"
-            else -> return ""
+        return when (resultBalls) {
+            in 5..12 -> "Introvert"
+            in 13..20 -> "Extrovert"
+
+            else -> ""
         }
     }
 

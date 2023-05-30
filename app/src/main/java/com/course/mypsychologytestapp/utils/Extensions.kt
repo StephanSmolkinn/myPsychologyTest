@@ -1,4 +1,4 @@
-package com.coursework.mypsychology.utils
+package com.course.mypsychologytestapp.utils
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
