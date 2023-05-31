@@ -1,4 +1,4 @@
-package com.course.mypsychologytestapp.ui.fragments.test
+package com.course.mypsychologytestapp.ui.fragments.test.process
 
 import android.graphics.Color
 import android.graphics.Typeface
@@ -12,15 +12,16 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentTestProcessBinding
-import com.course.mypsychologytestapp.model.ResultSecondTest
+import com.course.mypsychologytestapp.model.ResultFirstTest
 import com.course.mypsychologytestapp.repository.*
 import com.course.mypsychologytestapp.ui.fragments.test.questions.Question
-import com.course.mypsychologytestapp.ui.fragments.test.questions.constants.ConstantsTestTwo
+import com.course.mypsychologytestapp.ui.fragments.test.questions.constants.ConstantsTestOne
+import com.course.mypsychologytestapp.ui.fragments.test.result.TestFirstResultFragment
 import com.google.firebase.auth.FirebaseAuth
 
-class TestTwoProcessFragment : Fragment(), View.OnClickListener {
+class TestOneProcessFragment : Fragment(), View.OnClickListener {
 
-    lateinit var binding: FragmentTestProcessBinding
+    private lateinit var binding: FragmentTestProcessBinding
     lateinit var questionListTest1: ArrayList<Question>
     private var selectedAnswer: Int = 0
     private var currentPosition: Int = 1
@@ -36,7 +37,7 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        questionListTest1 = ConstantsTestTwo.getQuestion()
+        questionListTest1 = ConstantsTestOne.getQuestion()
 
         binding.optionOne.setOnClickListener(this)
         binding.optionTwo.setOnClickListener(this)
@@ -57,7 +58,6 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
         binding.optionThree.text = question.optionThree
         binding.optionFour.text = question.optionFour
 
-        binding.progressBar.max = 5
         binding.progressBar.progress = currentPosition
         binding.progressTextView.text = "$currentPosition/${binding.progressBar.max}"
         textViewAppearance()
@@ -86,7 +86,7 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(p0: View?) {
-        when(p0?.id) {
+        when (p0?.id) {
             R.id.optionOne -> selectedOption(binding.optionOne, 1)
             R.id.optionTwo -> selectedOption(binding.optionTwo, 2)
             R.id.optionThree -> selectedOption(binding.optionThree, 3)
@@ -96,24 +96,24 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
                     getBalls(selectedAnswer)
                     currentPosition++
                     if (currentPosition == questionListTest1.size) {
-                        updateResultTestTwo()
+                        updateResultTestOne()
                         val transaction = activity?.supportFragmentManager?.beginTransaction()
-                        transaction?.replace(R.id.containerTest, TestSecondResultFragment())
+                        transaction?.replace(R.id.containerTest, TestFirstResultFragment())
                         transaction?.disallowAddToBackStack()
                         transaction?.commit()
-                    }
-                    else {
+                    } else {
                         val question = questionListTest1[currentPosition - 1]
                         setQuestion()
                     }
-                }
-                else if (selectedAnswer == 0) {
+                } else if (selectedAnswer == 0) {
                     when {
                         currentPosition <= questionListTest1.size -> {
-                            Toast.makeText(requireContext(), "Choose option", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "Choose option", Toast.LENGTH_SHORT)
+                                .show()
                         }
                         else -> {
-                            Toast.makeText(requireContext(), "Test finished", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "Test finished", Toast.LENGTH_SHORT)
+                                .show()
                         }
                     }
                 }
@@ -133,7 +133,7 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
     }
 
     private fun getBalls(selectedAnswer: Int) {
-        when(selectedAnswer) {
+        when (selectedAnswer) {
             1 -> balls++
             2 -> balls += 2
             3 -> balls += 3
@@ -141,23 +141,24 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    private fun updateResultTestTwo() {
-        updateDatabaseAchievement(balls)
+    private fun updateResultTestOne() {
+        updateDatabase(balls)
     }
 
-    private fun updateDatabaseAchievement(resultBalls: Int) {
-        val resultSecondTest = ResultSecondTest(
+    private fun updateDatabase(resultBalls: Int) {
+        val resultFirstTest = ResultFirstTest(
             uid = FirebaseAuth.getInstance().currentUser!!.uid,
-            result = resultPersonality(resultBalls)
+            result = resultTemperament(resultBalls)
         )
-        ResultSecondTestRepository().createResultSecondTest(resultSecondTest)
+        ResultFirstTestRepository().createResultFirstTest(resultFirstTest)
     }
 
-    private fun resultPersonality(resultBalls: Int): String {
+    private fun resultTemperament(resultBalls: Int): String {
         return when (resultBalls) {
-            in 5..12 -> "Introvert"
-            in 13..20 -> "Extrovert"
-
+            in 8..15 -> "Phlegmatic"
+            in 16..23 -> "Choleric"
+            in 24..29 -> "Sanguine"
+            in 30..32 -> "Melancholic"
             else -> ""
         }
     }

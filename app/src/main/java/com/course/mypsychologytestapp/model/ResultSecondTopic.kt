@@ -1,6 +1,6 @@
 package com.course.mypsychologytestapp.model
 
-data class ResultFistTest (
+data class ResultSecondTopic(
     val uid: String = "",
-    val result: String = ""
+    val result: String? = null
 )

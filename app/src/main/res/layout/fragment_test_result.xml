@@ -31,7 +31,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
-                android:text=""
+                android:text="Result"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="25sp"
@@ -42,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Description "
+                android:text="Description"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:gravity="center" />

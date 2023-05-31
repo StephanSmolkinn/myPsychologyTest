@@ -1,11 +1,11 @@
 package com.course.mypsychologytestapp.repository
 
-import com.course.mypsychologytestapp.model.ResultFistTest
+import com.course.mypsychologytestapp.model.ResultFirstTest
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class ResultFirstTestRepository {
-    fun createResultFirstTest(resultFistTest: ResultFistTest) {
+    fun createResultFirstTest(resultFistTest: ResultFirstTest) {
         val database = Firebase.database
         val userDbRef = database.getReference("Test One")
         val userNodeRef = userDbRef.child(resultFistTest.uid)

@@ -55,17 +55,6 @@ class ProfileFragment : Fragment() {
             updateName()
         }
 
-        binding.emailTextInputLayout.setEndIconOnClickListener {
-            val user = FirebaseAuth.getInstance().currentUser
-            val email = binding.editEmail.text.toString()
-            if (checkEmailField()) {
-                FirebaseAuth.getInstance().currentUser?.updateEmail(email)?.addOnCompleteListener {
-                    if (it.isSuccessful)
-                        Toast.makeText(requireContext(), "Email updated", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-
     }
 
     private fun updateName() {
@@ -83,22 +72,6 @@ class ProfileFragment : Fragment() {
                 updateDatabaseUser()
             }
         }
-    }
-
-    private fun checkEmailField(): Boolean {
-        val email = binding.editEmail.text.toString()
-
-        if (binding.editEmail.text.toString().isEmpty()) {
-            binding.emailTextInputLayout.error = "Empty"
-            return false
-        }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.emailTextInputLayout.error = "Invalid email format"
-            return false
-        }
-
-        return true
     }
 
     private fun updateDatabaseUser() {

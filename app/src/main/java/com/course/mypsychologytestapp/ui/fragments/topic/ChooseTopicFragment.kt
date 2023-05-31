@@ -29,6 +29,12 @@ class ChooseTopicFragment : Fragment() {
             transaction?.disallowAddToBackStack()
             transaction?.commit()
         }
+        binding.startTopic2Button.setOnClickListener {
+            val transaction = activity?.supportFragmentManager?.beginTransaction()
+            transaction?.replace(R.id.containerTopic, TopicTwoFragment())
+            transaction?.disallowAddToBackStack()
+            transaction?.commit()
+        }
     }
 
 }

@@ -1,4 +1,4 @@
-package com.course.mypsychologytestapp.ui.fragments.topic.topiccontent
+package com.course.mypsychologytestapp.ui.fragments.topic.contentTopicOne
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.databinding.FragmentTopicOneContentBinding
+import com.course.mypsychologytestapp.ui.fragments.topic.constants.ConstantsTopic
 
-class TopicOneTwoPageFragment : Fragment() {
+class TopicOneFirstPageContentFragment : Fragment() {
 
     lateinit var binding: FragmentTopicOneContentBinding
 
@@ -21,8 +22,11 @@ class TopicOneTwoPageFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val content = "2 Page"
-        binding.textView.text = content
+        val name = "Sanguine"
+        binding.topicOneName.text = name
+
+        binding.topicOneContent.text = ConstantsTopic.getTextTopicOne(0)
+
     }
 
 }

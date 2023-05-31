@@ -4,9 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.commit
 import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentChooseTestBinding
+import com.course.mypsychologytestapp.ui.fragments.home.HomeFragment
+import com.course.mypsychologytestapp.ui.fragments.test.process.TestOneProcessFragment
+import com.course.mypsychologytestapp.ui.fragments.test.process.TestTwoProcessFragment
+import com.course.mypsychologytestapp.utils.replaceFragment
 
 class ChooseTestFragment : Fragment() {
 
