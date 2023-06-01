@@ -42,17 +42,19 @@ class HomeFragment : Fragment() {
     private fun readDataTest() {
         database = FirebaseDatabase.getInstance().getReference("Test One")
         database.child(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener {
-            val resultTemperament = it.child("result").value.toString()
-            if (resultTemperament.isNotEmpty())
+            if (it.child("result").value != null) {
+                val resultTemperament = it.child("result").value.toString()
                 binding.testTopicOneResult.text = "You are $resultTemperament"
+            }
             else
                 binding.testTopicOneResult.text = "No result. Take the temperament test"
         }
         database = FirebaseDatabase.getInstance().getReference("Test Two")
         database.child(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener {
-            val resultPersonality = it.child("result").value.toString()
-            if (resultPersonality.isNotEmpty())
+            if (it.child("result").value != null) {
+                val resultPersonality = it.child("result").value.toString()
                 binding.testTopicTwoResult.text = "You are $resultPersonality"
+            }
             else
                 binding.testTopicTwoResult.text = "No result. take the personality test"
         }
