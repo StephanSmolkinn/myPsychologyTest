@@ -8,9 +8,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentTopicOneContentBinding
-import com.course.mypsychologytestapp.model.ResultFirstTest
 import com.course.mypsychologytestapp.model.ResultFirstTopic
-import com.course.mypsychologytestapp.repository.ResultFirstTestRepository
 import com.course.mypsychologytestapp.repository.ResultFirstTopicRepository
 import com.course.mypsychologytestapp.ui.fragments.topic.ChooseTopicFragment
 import com.course.mypsychologytestapp.ui.fragments.topic.constants.ConstantsTopic

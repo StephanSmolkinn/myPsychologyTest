@@ -4,12 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentTestBinding
-import com.course.mypsychologytestapp.ui.fragments.home.HomeFragment
-import com.course.mypsychologytestapp.ui.fragments.test.ChooseTestFragment
 class TestFragment : Fragment() {
 
     private lateinit var binding: FragmentTestBinding

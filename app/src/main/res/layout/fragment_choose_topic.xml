@@ -59,10 +59,10 @@
 
         <ImageView
             android:id="@+id/imageTopic1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/image_test_topic" />
+            app:srcCompat="@drawable/ic_book_topic" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/startTopic1Button"
@@ -103,10 +103,10 @@
 
         <ImageView
             android:id="@+id/imageTopic2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/image_test_topic" />
+            app:srcCompat="@drawable/ic_book_topic" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/startTopic2Button"

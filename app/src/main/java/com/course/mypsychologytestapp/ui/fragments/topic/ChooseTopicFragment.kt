@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
-import com.course.mypsychologytestapp.databinding.FragmentChooseTestBinding
 import com.course.mypsychologytestapp.databinding.FragmentChooseTopicBinding
 
 class ChooseTopicFragment : Fragment() {

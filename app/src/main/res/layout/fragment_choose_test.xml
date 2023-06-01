@@ -25,7 +25,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/_841125" />
+            app:srcCompat="@drawable/books_test" />
 
         <TextView
             android:id="@+id/textView1"
@@ -72,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/image_test_topic" />
+            app:srcCompat="@drawable/image_test" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/startTest1Button"
@@ -116,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/image_test_topic" />
+            app:srcCompat="@drawable/image_test" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/startTest2Button"

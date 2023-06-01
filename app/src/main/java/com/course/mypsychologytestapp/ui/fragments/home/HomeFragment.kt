@@ -4,13 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentHomeBinding
-import com.course.mypsychologytestapp.ui.fragments.test.description.checkResult
-import com.course.mypsychologytestapp.ui.fragments.test.description.getDescriptionFirstTest
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase

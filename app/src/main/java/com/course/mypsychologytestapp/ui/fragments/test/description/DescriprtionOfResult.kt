@@ -1,6 +1,5 @@
 package com.course.mypsychologytestapp.ui.fragments.test.description
 
-
 fun checkResult(resultTest: String): String {
     return when (resultTest) {
         // for test one
