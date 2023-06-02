@@ -1,5 +1,7 @@
 package com.course.mypsychologytestapp.ui.fragments.test.description
 
+import com.course.mypsychologytestapp.ui.fragments.test.questions.constants.ConstantsResultTest
+
 fun checkResult(resultTest: String): String {
     return when (resultTest) {
         // for test one
@@ -18,17 +20,13 @@ fun checkResult(resultTest: String): String {
 
 fun descriptionFirstTest(number: Int): String {
     return when (number) {
-        1 -> "Slow, difficult to switch from one activity to another, " +
-                "stable and constant in aspirations and mood, " +
-                "stingy with the manifestation of emotions."
+        1 -> ConstantsResultTest.RESULT_PHLEGMATIC
 
-        2 -> "fast, impetuous, impulsive, unbalanced, prone to sudden changes in mood, " +
-                "emotional outbursts."
+        2 -> ConstantsResultTest.RESULT_CHOLERIC
 
-        3 -> "Agile, lively, easily experiencing failures, striving for a change of impressions."
+        3 -> ConstantsResultTest.RESULT_SANGUINE
 
-        4 -> "Restrained, vulnerable, impressionable, prone to constant experience " +
-                "of even minor events, shy."
+        4 -> ConstantsResultTest.RESULT_MELANCHOLIC
 
         else -> ""
     }
@@ -36,13 +34,9 @@ fun descriptionFirstTest(number: Int): String {
 
 fun descriptionSecondTest(number: Int): String {
     return when (number) {
-        1 -> "Introverts are not too talkative, they are more silent, " +
-                "but if you find the right contact with them, then " +
-                "representatives of this type of personality can tell a lot of interesting things."
+        1 -> ConstantsResultTest.RESULT_INTROVERT
 
-        2 -> "Extroverts are quite sociable and can easily find a language with a new person. " +
-                "In the team, these people are the soul of the company, " +
-                "they often communicate on various topics."
+        2 -> ConstantsResultTest.RESULT_EXTROVERT
 
         else -> ""
     }

@@ -26,7 +26,6 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         binding.checkTestResultButton.setOnClickListener {
             binding.testTopic.text = "test"
             readDataTest()
