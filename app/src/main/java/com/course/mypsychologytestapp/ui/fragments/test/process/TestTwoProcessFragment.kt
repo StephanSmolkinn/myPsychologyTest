@@ -49,7 +49,6 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setQuestion() {
-
         var question: Question = questionListTest1[currentPosition - 1]
 
         binding.question.text = question.question
@@ -67,7 +66,6 @@ class TestTwoProcessFragment : Fragment(), View.OnClickListener {
             binding.submitQuestionButton.text = "Finish"
         else
             binding.submitQuestionButton.text = "SUBMIT"
-
     }
 
     private fun textViewAppearance() {

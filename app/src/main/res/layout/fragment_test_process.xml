@@ -62,7 +62,6 @@
             android:textColor="@color/blue"
             android:textStyle="bold" />
 
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/optionTwo"
             android:layout_width="match_parent"
@@ -77,7 +76,6 @@
             android:textStyle="bold" />
 
 
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/optionThree"
             android:layout_width="match_parent"
@@ -87,11 +85,9 @@
             android:text="Option 3"
             android:textSize="17sp"
             android:padding="15dp"
-
             android:background="@drawable/option_background"
             android:textColor="@color/blue"
             android:textStyle="bold" />
-
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/optionFour"

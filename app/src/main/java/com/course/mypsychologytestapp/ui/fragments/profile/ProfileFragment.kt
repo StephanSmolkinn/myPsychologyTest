@@ -52,7 +52,6 @@ class ProfileFragment : Fragment() {
         binding.nameTextInputLayout.setEndIconOnClickListener {
             updateName()
         }
-
     }
 
     private fun updateName() {
