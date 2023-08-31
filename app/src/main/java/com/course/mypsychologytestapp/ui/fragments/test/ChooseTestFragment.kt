@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentChooseTestBinding
 import com.course.mypsychologytestapp.ui.fragments.test.process.TestOneProcessFragment
 import com.course.mypsychologytestapp.ui.fragments.test.process.TestTwoProcessFragment
+import com.course.mypsychologytestapp.utils.transaction
 
 class ChooseTestFragment : Fragment() {
 
@@ -26,16 +28,10 @@ class ChooseTestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.startTest1Button.setOnClickListener {
-            val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.containerTest, TestOneProcessFragment())
-            transaction?.disallowAddToBackStack()
-            transaction?.commit()
+            transaction(R.id.containerTest, TestOneProcessFragment(), activity as AppCompatActivity)
         }
         binding.startTest2Button.setOnClickListener {
-            val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.containerTest, TestTwoProcessFragment())
-            transaction?.disallowAddToBackStack()
-            transaction?.commit()
+            transaction(R.id.containerTest, TestTwoProcessFragment(), activity as AppCompatActivity)
         }
     }
 

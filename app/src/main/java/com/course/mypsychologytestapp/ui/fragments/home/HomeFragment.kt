@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
 import com.course.mypsychologytestapp.databinding.FragmentHomeBinding
+import com.course.mypsychologytestapp.repository.ResultFirstTestRepository
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -44,8 +47,7 @@ class HomeFragment : Fragment() {
             if (it.child("result").value != null) {
                 val resultTemperament = it.child("result").value.toString()
                 binding.testTopicOneResult.text = "You are $resultTemperament"
-            }
-            else
+            } else
                 binding.testTopicOneResult.text = "No result. Take the temperament test"
         }
         database = FirebaseDatabase.getInstance().getReference("Test Two")
@@ -53,8 +55,7 @@ class HomeFragment : Fragment() {
             if (it.child("result").value != null) {
                 val resultPersonality = it.child("result").value.toString()
                 binding.testTopicTwoResult.text = "You are $resultPersonality"
-            }
-            else
+            } else
                 binding.testTopicTwoResult.text = "No result. take the personality test"
         }
     }
@@ -62,18 +63,17 @@ class HomeFragment : Fragment() {
     private fun readDataTopic() {
         database = FirebaseDatabase.getInstance().getReference("Topic One")
         database.child(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener {
-            if(it.child("result").value != null)
+            if (it.child("result").value != null)
                 binding.testTopicOneResult.text = "You read temperament topic "
             else
                 binding.testTopicOneResult.text = "Temperament topic not read yet"
         }
         database = FirebaseDatabase.getInstance().getReference("Topic Two")
         database.child(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener {
-            if(it.child("result").value != null)
+            if (it.child("result").value != null)
                 binding.testTopicTwoResult.text = "You read personality topic "
             else
                 binding.testTopicTwoResult.text = "Personality topic not read yet"
         }
     }
-
 }

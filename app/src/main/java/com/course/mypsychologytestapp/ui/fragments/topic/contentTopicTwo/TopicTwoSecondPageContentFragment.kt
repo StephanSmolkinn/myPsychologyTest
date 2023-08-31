@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
@@ -12,6 +13,7 @@ import com.course.mypsychologytestapp.model.ResultSecondTopic
 import com.course.mypsychologytestapp.repository.ResultSecondTopicRepository
 import com.course.mypsychologytestapp.ui.fragments.topic.ChooseTopicFragment
 import com.course.mypsychologytestapp.ui.fragments.topic.constants.ConstantsTopic
+import com.course.mypsychologytestapp.utils.transaction
 import com.google.firebase.auth.FirebaseAuth
 
 class TopicTwoSecondPageContentFragment : Fragment() {
@@ -35,10 +37,7 @@ class TopicTwoSecondPageContentFragment : Fragment() {
         binding.endTopicTwoButton.isVisible = true
         binding.endTopicTwoButton.setOnClickListener {
             updateTopicTwoDatabase()
-            val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.containerTopic, ChooseTopicFragment())
-            transaction?.disallowAddToBackStack()
-            transaction?.commit()
+            transaction(R.id.containerTopic, ChooseTopicFragment(), activity as AppCompatActivity)
         }
     }
 

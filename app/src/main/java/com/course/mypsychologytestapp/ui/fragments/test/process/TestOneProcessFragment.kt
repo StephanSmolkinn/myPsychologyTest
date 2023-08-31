@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
@@ -17,6 +18,7 @@ import com.course.mypsychologytestapp.repository.*
 import com.course.mypsychologytestapp.ui.fragments.test.questions.Question
 import com.course.mypsychologytestapp.ui.fragments.test.questions.constants.ConstantsTestOne
 import com.course.mypsychologytestapp.ui.fragments.test.result.TestFirstResultFragment
+import com.course.mypsychologytestapp.utils.transaction
 import com.google.firebase.auth.FirebaseAuth
 
 class TestOneProcessFragment : Fragment(), View.OnClickListener {
@@ -95,10 +97,7 @@ class TestOneProcessFragment : Fragment(), View.OnClickListener {
                     currentPosition++
                     if (currentPosition == questionListTest1.size) {
                         updateResultTestOne()
-                        val transaction = activity?.supportFragmentManager?.beginTransaction()
-                        transaction?.replace(R.id.containerTest, TestFirstResultFragment())
-                        transaction?.disallowAddToBackStack()
-                        transaction?.commit()
+                        transaction(R.id.containerTest, TestFirstResultFragment(), activity as AppCompatActivity)
                     } else {
                         val question = questionListTest1[currentPosition - 1]
                         setQuestion()

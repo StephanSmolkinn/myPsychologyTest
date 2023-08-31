@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.course.mypsychologytestapp.R
 import com.course.mypsychologytestapp.databinding.FragmentChooseTopicBinding
+import com.course.mypsychologytestapp.utils.transaction
 
 class ChooseTopicFragment : Fragment() {
 
@@ -23,16 +25,10 @@ class ChooseTopicFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.startTopic1Button.setOnClickListener {
-            val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.containerTopic, TopicOneFragment())
-            transaction?.disallowAddToBackStack()
-            transaction?.commit()
+            transaction(R.id.containerTopic, TopicOneFragment(), activity as AppCompatActivity)
         }
         binding.startTopic2Button.setOnClickListener {
-            val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.containerTopic, TopicTwoFragment())
-            transaction?.disallowAddToBackStack()
-            transaction?.commit()
+            transaction(R.id.containerTopic, TopicTwoFragment(), activity as AppCompatActivity)
         }
     }
 
