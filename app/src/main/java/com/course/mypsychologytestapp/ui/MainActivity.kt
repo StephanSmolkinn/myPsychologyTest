@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         showStartHome()
     }
 
+    // test commit
     private fun showStartHome() {
         if (FirebaseAuth.getInstance().currentUser != null) {
             val intent = Intent(this, HomeActivity::class.java)
